@@ -59,6 +59,18 @@ AWS 설명서에서 [리전 표](https://aws.amazon.com/about-aws/global-infrast
     
 위 경로에서 website.zip 압축파일을 다운로드 한 다음 압축을 풀고, 폴더 안에 있는 파일들을 사용자가 생성한 버킷에 업로드해서 이용하실 수 있습니다.
 
+<details>
+<summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
+
+1. AWS Management Console에서 Services 를 선택한 다음 S3 를 선택하십시오.
+
+2. 이전에 만든 `wildrydes-firstname-lastname` 버킷을 선택하십시오.
+
+3. 업로드 버튼을 누르고, 다운받고 압축을 푼 website 폴더 내의 모든 파일을 드래그 앤 드랍으로 s3 버킷에 업로드 하십시오.
+    ![버킷 업로드 스크린샷](../images/s3-drag-and-drop.png)
+
+</p></details>
+
 ### 3. 버킷 정책에 Public Reads 권한을 허용
 
 익명 사용자가 사이트를 볼 수있게하려면 버킷 정책을 새 Amazon S3 버킷에 추가해야합니다. 기본적으로 버킷은 AWS 계정에 대한 액세스 권한이있는 인증 된 사용자 만 액세스 할 수 있습니다.
