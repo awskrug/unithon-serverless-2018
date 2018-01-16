@@ -55,7 +55,7 @@ AWS 설명서에서 [리전 표](https://aws.amazon.com/about-aws/global-infrast
 
 ### 2. 콘텐츠 업로드
 
-    http://bit.ly/awskrug_serverless_website
+    http://bit.ly/2EIuWha
     
 위 경로에서 website.zip 압축파일을 다운로드 한 다음 압축을 풀고, 폴더 안에 있는 파일들을 사용자가 생성한 버킷에 업로드해서 이용하실 수 있습니다.
 

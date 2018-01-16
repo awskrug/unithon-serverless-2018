@@ -43,19 +43,17 @@ Amazon API Gateway 콘솔에서 API에 대한 새로운 Cognito 사용자 풀 �
 
 1. 새로 작성된 API에서, **Authorizers** 를 선택하십시오 .
 
-1. **Create** 드롭 다운 목록에서, **Cognito User Pool Authorizer** 를 선택하십시오.
+1. 새로운 권한 부여자 생성 버튼을 선택하십시오.
 
-    ![사용자 풀 인증 프로그램 작성 스크린샷](../images/create-user-pool-authorizer.png)
+2. 이름에 `WildRydes`를 입력하십시오
 
-1. 모듈 2에서 Cognito 사용자 풀을 만든 리전을 선택하십시오.
+3. 유형은 `Cognito`를 선택하십시오
 
-1. 드롭 다운 목록에서 `WildRydes` Cognito 사용자 풀을 선택하십시오.
+4.  Cognito 사용자 풀은 드랍 다운 목록에서 `WildRydes`를 선택하십시오
 
-1. 인증자 이름(Authorizer name)에 `WildRydes` 를 입력하십시오.
+5. 토큰 원본에 `Authorization`를 입력하십시오
 
-1. **Identity token source** 가 `Authorization` 로 설정되었는지 확인하십시오.
-
-1. **Create** 를 선택하십시오.
+6. **Create**를 선택하십시오
 
 #### 인증자 프로그램(authorizer) 구성을 확인하기
 
@@ -82,6 +80,8 @@ API 내에 /ride 라는 새 리소스를 만듭니다. 그런 다음 해당 리�
 1. **Resource Name** 으로 `ride` 를 입력하십시오.
 
 1. **Resource Path** 가 `ride` 로 설정되어있는지 확인하십시오.
+
+1. **API Gateway CORS 활성화** 체크박스를 체크하십시오.
 
 1. **Create Resource** 를 클릭하십시오.
 
@@ -205,7 +205,5 @@ Amazon API Gateway 콘솔에서 Actions 를 선택하고, Deploy API 를 선택�
 1. 웹 페이지에서 지도가 로드된 이후 , 아무 장소나 클릭해서 픽업 위치를 선택합니다.
 
 1. **Request Unicorn** 을 선택하십시오. 오른쪽 사이드바에 유니콘이 오고 있다는 알림이 표시되고, 유니콘 아이콘이 픽업 위치로 이동하는것을 볼 수 있습니다.
-
-축하합니다! Wild Rydes 웹 응용 프로그램 워크샵을 완료했습니다! 추가 서버리스 사용 사례를 다루는 [기타 워크샵](../../README.md#workshops) 을 확인하십시오.
 
 작성한 리소스를 삭제하는 방법은 이 워크샵의 [삭제 가이드](../9_CleanUp) 를 참고하십시오. **중요합니다**
