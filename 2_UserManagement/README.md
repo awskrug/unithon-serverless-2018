@@ -2,48 +2,6 @@
 
 이 모듈에서는 Amazon Cognito user pool 을 만들어 사용자의 계정을 관리합니다. 고객이 새 사용자로 등록하고 이메일 주소를 확인하고 사이트에 로그인 할수있는 웹 페이지를 배포합니다.
 
-다음 모듈로 건너 뛰려면, 원하는 지역에서 AWS CloudFormation 템플릿 중 하나를 시작해서 필요한 리소스를 자동으로 구축하십시오.
-
-Region| Launch
-------|-----
-US East (N. Virginia) | [![Launch Module 1 in us-east-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=wildrydes-webapp-2&templateURL=https://s3.amazonaws.com/wildrydes-us-east-1/WebApplication/2_UserManagement/user-management.yaml)
-US East (Ohio) | [![Launch Module 1 in us-east-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=wildrydes-webapp-2&templateURL=https://s3.amazonaws.com/wildrydes-us-east-2/WebApplication/2_UserManagement/user-management.yaml)
-US West (Oregon) | [![Launch Module 1 in us-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=wildrydes-webapp-2&templateURL=https://s3.amazonaws.com/wildrydes-us-west-2/WebApplication/2_UserManagement/user-management.yaml)
-EU (Frankfurt) | [![Launch Module 1 in eu-central-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-central-1#/stacks/new?stackName=wildrydes-webapp-2&templateURL=https://s3.amazonaws.com/wildrydes-eu-central-1/WebApplication/2_UserManagement/user-management.yaml)
-EU (Ireland) | [![Launch Module 1 in eu-west-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=wildrydes-webapp-2&templateURL=https://s3.amazonaws.com/wildrydes-eu-west-1/WebApplication/2_UserManagement/user-management.yaml)
-EU (London) | [![Launch Module 1 in eu-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/new?stackName=wildrydes-webapp-2&templateURL=https://s3.amazonaws.com/wildrydes-eu-west-2/WebApplication/2_UserManagement/user-management.yaml)
-Asia Pacific (Tokyo) | [![Launch Module 1 in ap-northeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=wildrydes-webapp-2&templateURL=https://s3.amazonaws.com/wildrydes-ap-northeast-1/WebApplication/2_UserManagement/user-management.yaml)
-Asia Pacific (Seoul) | [![Launch Module 1 in ap-northeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=wildrydes-webapp-2&templateURL=https://s3.amazonaws.com/wildrydes-ap-northeast-2/WebApplication/2_UserManagement/user-management.yaml)
-Asia Pacific (Sydney) | [![Launch Module 1 in ap-southeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=wildrydes-webapp-2&templateURL=https://s3.amazonaws.com/wildrydes-ap-southeast-2/WebApplication/2_UserManagement/user-management.yaml)
-Asia Pacific (Mumbai) | [![Launch Module 1 in ap-south-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-south-1#/stacks/new?stackName=wildrydes-webapp-2&templateURL=https://s3.amazonaws.com/wildrydes-ap-south-1/WebApplication/2_UserManagement/user-management.yaml)
-
-
-<details>
-<summary><strong>CloudFormation 실행 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
-
-1. 위의 **Launch Stack** 링크를 선택하십시오.
-
-1. Select Template 페이지에서 **Next** 를 선택하십시오.
-
-1. **Website Bucket Name** (예: `wildrydes-yourname`) 에 모듈 1의 웹사이트 버킷 이름을 입력하고 **Next** 를 선택하십시오.
-
-    **참고:** 이전 모듈에서 사용한 것과 동일 버킷 이름을 지정해야 합니다. 존재하지 않거나 쓰기 권한이 없는 버킷이름을 제공하면 생성중에 CloudFormation 스택이 실패합니다.
-
-    ![세부 정보 스크린샷](../images/module2-cfn-specify-details.png)
-
-1. 옵션 페이지에서, 모든 기본값을 그대로 두고 **Next** 를 선택하십시오.
-
-1. 리뷰 페이지에서, acknowledge that CloudFormation will create IAM resources 체크박스를 선택하고 **Create** 을 선택합니다.
-    ![IAM 승인 스크린샷](../images/cfn-ack-iam.png)
-
-    이 템플릿은 사용자 지정 리소스를 사용하여 Amazon Cognito user pool 및 클라이언트를 만들고, 사용자 풀에 연결 및 웹사이트 버킷에 업로드하는데 필요한 세부 정보가 포함된 구성 파일을 생성합니다. 템플릿은 이런 리소스를 만들고 설정 파일을 버킷에 업로드 할 수 있는 액세스 권한을 제공하는 역할을 합니다.
-
-1. `wildrydes-webapp-2` 스택이 `CREATE_COMPLETE` 상태가 될 때까지 기다립니다.
-
-1. [구현 확인](#implementation-verification) 섹션에 설명 된 단계에 따라 다음 모듈로 이동할 준비가 되었는지 확인하십시오.
-
-</p></details>
-
 ## 아키텍쳐 개요
 
 사용자가 웹 사이트를 방문하면 먼저 새로운 사용자 계정을 등록합니다. 이 실습의 목적을 위해 우리는 이메일 주소와 암호를 넣도록 요구할것입니다. 하지만 Amazon Cognito 가 자신의 응용 프로그램에 추가 속성을 요구하도록 구성할 수 있습니다.
@@ -69,46 +27,46 @@ Amazon Cognito 콘솔을 사용하여 기본 설정을 이용해서 새 사용�
 
 1. AWS 콘솔에서 **Services** 를 클릭한 다음, 모바일 서비스에서 **Cognito** 를 선택하십시오.
 
-1. **Manage your User Pools** 를 선택하십시오.
+1. **사용자 풀 관리** 을 선택하십시오.
 
-1. **Create a User Pool** 를 선택하십시오.
+1. **사용자 풀 생성** 을 선택하십시오.
 
-1. `WildRydes`와 같은 사용자 풀 이름을 입력한 다음, **Review Defaults**를 선택하십시오.
+1. `WildRydes`와 같은 사용자 풀 이름을 입력한 다음, **기본값 검토**를 선택하십시오.
 
     ![사용자 풀 만들기 스크린샷](../images/create-a-user-pool.png)
 
-1. 리뷰 페이지에서, **Create pool**을 클릭하십시오.
+1. 리뷰 페이지에서, **풀 생성**을 클릭하십시오.
 
-1. 새로 생성된 user pool 의 세부정보 페이지에서 **Pool Id** 를 확인하십시오. (메모장에 기록해놓으면 좋습니다)
+1. 새로 생성된 user pool 의 세부정보 페이지에서 **풀 ID** 를 확인하십시오. (메모장에 기록해놓으면 좋습니다)
 
 </p></details>
 
-### 2. User Pool에 앱 클라이언트 추가
+### 2. 사용자 풀에 앱 클라이언트 추가
 
-Amazon Cognito 콘솔에서 user pool 을 선택한 다음 **App clients** 섹션을 선택합니다. 새 앱을 추가하고 Generate client secret option 의 선택이 해제되어 있는지 확인하십시오. Client secrets 옵션은 JavaScript SDK에서 지원되지 않습니다. 생성된 암호로 앱을 만드는 경우 암호를 삭제하고 올바른 구성으로 새 암호를 만듭니다.
+Amazon Cognito 콘솔에서 사용자 풀 을 선택한 다음 **일반 설정**탭의 **앱 클라이언트** 섹션을 선택합니다. **앱 클라이언트 추가**를 선택하고 **클라이언트 보안키 생성**의 선택이 해제되어 있는지 확인하십시오. 클라이언트 보안키 옵션은 JavaScript SDK에서 지원되지 않습니다. 생성된 암호로 앱을 만드는 경우 암호를 삭제하고 올바른 구성으로 새 암호를 만듭니다.
 
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
 
-1. 사용자 풀에 대한 세부 정보 페이지의 왼쪽 탐색기 메뉴에서 **App clients** 를 선택합니다.
+1. 사용자 풀에 대한 세부 정보 페이지의 왼쪽 탐색기 메뉴에서 **앱 클라이언트** 를 선택합니다.
 
-1. **Add an app client**를 선택합니다.
+1. **앱 클라이언트 추가**를 선택합니다.
 
 1. 앱에 `WildRydesWebApp` 와 같은 이름을 지정합니다.
 
-1. **선택취소** Generate client secret 옵션의 선택은 해제하십시오. Client secrets 옵션은 웹 브라우저 기반 응용 프로그램에서는 사용할 수 없습니다.
+1. **클라이언트 보안키 생성** 옵션의 선택은 해제하십시오. 클라이언트 보안키 생성 옵션은 웹 브라우저 기반 응용 프로그램에서는 사용할 수 없습니다.
 
-1. **Create app client** 클릭하십시오.
+1. **앱 클라이언트 생성** 클릭하십시오.
 
    <kbd>![앱 클라이언트 만들기 스크린샷](../images/add-app.png)</kbd>
 
-1. 새로 생성 된 응용 프로그램에 대한 **App client id** 를 미리 메모장에 복사해놓으십시오. 나중에 사용됩니다.
+1. 새로 생성 된 응용 프로그램에 대한 **앱 클라이언트 ID** 를 미리 메모장에 복사해놓으십시오. 나중에 사용됩니다.
 
 </p></details>
 
 ### 3. 웹 사이트 버킷에서 config.js 파일 업데이트
 
-[/js/config.js](../1_StaticWebHosting/website/js/config.js) 파일에는 user pool ID, app client ID 및 Region에 대한 설정이 들어있습니다. 이전 단계에서 생성한 사용자 풀 및 앱의 설정으로 이 파일을 업데이트하고 파일을 S3 버킷에 다시 업로드 하십시오.
+[/js/config.js](../1_StaticWebHosting/website/js/config.js) 파일에는 유저 풀 ID, 앱 클라이언트 ID 및 Region에 대한 설정이 들어있습니다. 이전 단계에서 생성한 사용자 풀 및 앱의 설정으로 이 파일을 업데이트하고 파일을 S3 버킷에 다시 업로드 하십시오.
 
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
@@ -119,11 +77,11 @@ Amazon Cognito 콘솔에서 user pool 을 선택한 다음 **App clients** 섹�
 
 1. `cognito` 섹션을 방금 생성한 사용자 풀과 앱에 대한 올바른 값으로 수정하십시오.
 
-    생성한 사용자 풀을 선택하면 Amazon Cognito 콘솔의 Pool Details 페이지에서 `userPoolId` 값을 확인할 수 있습니다.
+    생성한 사용자 풀을 선택하면 Amazon Cognito 콘솔의 일반 설정 페이지에서 `userPoolId` 값을 확인할 수 있습니다.
 
     ![Pool ID](../images/pool-id.png)
 
-    왼쪽 네비게이션 바에서 **App clients** 를 선택해서 `userPoolClientId` 값을 확인할 수 있습니다. 이전 섹션에서 생성한 앱에 대해 **App client id** 입력란의 값을 사용합니다.
+    왼쪽 네비게이션 바에서 **앱 클라이언트** 를 선택해서 `userPoolClientId` 값을 확인할 수 있습니다. 이전 섹션에서 생성한 앱에 대해 **앱 클라이언트 id** 입력란의 값을 사용합니다.
 
     ![Pool ID](../images/client-id.png)
 
@@ -133,12 +91,12 @@ Amazon Cognito 콘솔에서 user pool 을 선택한 다음 **App clients** 섹�
     ```JavaScript
     window._config = {
         cognito: {
-            userPoolId: 'us-west-2_uXboG5pAb', // e.g. us-east-2_uXboG5pAb
-            userPoolClientId: '25ddkmj4v6hfsfvruhpfi7n4hv', // e.g. 25ddkmj4v6hfsfvruhpfi7n4hv
-            region: 'us-west-2' // e.g. us-east-2
+            userPoolId: 'ap-northeast-2_X9dpNvODH', // chapter 2. e.g. ap-northeast-2_uXboG5pAb
+            userPoolClientId: '4u3uslknetgp2fanpf81sttnqf', // chapter 2. e.g. 25ddkmj4v6hfsfvruhpfi7n4hv
+            region: 'ap-northeast-2' // chapter 2. e.g. ap-northeast-2
         },
         api: {
-            invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod',
+            invokeUrl: '' // chapter 3. e.g. https://rc7nyt4tql.execute-api.ap-northeast-2.amazonaws.com/prod',
         }
     };
     ```
