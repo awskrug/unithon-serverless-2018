@@ -41,13 +41,13 @@ AWS 설명서에서 [리전 표](https://aws.amazon.com/about-aws/global-infrast
 
 1. AWS Management Console에서 **Services** 를 선택한 다음 **S3** 를 선택하십시오.
 
-1. **+Create Bucket** 을 선택하십시오.
+1. **+ 버킷 만들기** 을 선택하십시오.
 
 1. `wildrydes-firstname-lastname`와 같은 전 세계적으로 고유한 이름을 설정하십시오.
 
 1. 드롭다운 메뉴에서 이 실습에서 사용할 리전을 선택하십시오.
 
-1. 설정을 복사할 버킷을 선택하지 않고 대화상자의 왼쪽 하단에 있는 **Create** 를 선택하십시오.
+1. 설정을 복사할 버킷을 선택하지 않고 대화상자의 왼쪽 하단에 있는 **생성** 을 선택하십시오.
 
     ![버킷 생성 스크린샷](../images/create-bucket.png)
 
@@ -82,7 +82,7 @@ AWS 설명서에서 [리전 표](https://aws.amazon.com/about-aws/global-infrast
 
 1.  S3 콘솔에서 섹션 1에서 생성 한 버킷의 이름을 선택하십시오.
 
-1. **Permissions** 탭을 선택한 다음, **Bucket Policy**를 선택하십시오.
+1. **권한** 탭을 선택한 다음, **버킷 정책**를 선택하십시오.
 
 1. 다음 정책 문서를 버킷 정책 편집기에 입력하고 `[YOUR_BUCKET_NAME]` 을 섹션 1에서 생성한 버킷 이름으로 변경하십시오.
 
@@ -102,7 +102,7 @@ AWS 설명서에서 [리전 표](https://aws.amazon.com/about-aws/global-infrast
 
     ![업데이트된 버킷 정책 스크린샷](../images/update-bucket-policy.png)
 
-1. **Save** 버튼을 선택하여 새 정책을 적용하십시오.
+1. **저장** 버튼을 선택하여 새 정책을 적용하십시오.
 
 </p></details>
 
@@ -113,15 +113,15 @@ AWS 설명서에서 [리전 표](https://aws.amazon.com/about-aws/global-infrast
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
 
-1. S3 콘솔의 버킷 세부 사항 페이지에서, **Properties** 탭을 선택하십시오.
+1. S3 콘솔의 버킷 세부 사항 페이지에서, **속성** 탭을 선택하십시오.
 
-1. **Static website hosting** 을 선택하십시오.
+1. **정적 웹 사이트 호스팅** 을 선택하십시오.
 
-1. **Use this bucket to host a website** 을 선택하고, index document에 `index.html`를 입력하십시오. 다른 입력칸은 비워둡니다.
+1. **이 버킷을 사용하여 웹 사이트를 호스팅합니다.** 을 선택하고, 인덱스 문서에 `index.html`를 입력하십시오. 다른 입력칸은 비워둡니다.
 
-1. 먼저 **Endpoint** URL 을 확인하십시오. 그 뒤에 **Save** 버튼을 클릭하십시오. 이 URL을 나머지 실습에서 웹 응용 프로그램을 볼 때 사용할 것입니다. 여기에서 이 URL을 귀하의 웹 사이트의 기본 URL이라고 합니다.
+1. 먼저 **엔드포인트** URL 을 확인하십시오. 그 뒤에 **저장** 버튼을 클릭하십시오. 이 URL을 나머지 실습에서 웹 응용 프로그램을 볼 때 사용할 것입니다. 여기에서 이 URL을 귀하의 웹 사이트의 기본 URL이라고 합니다.
 
-1. **Save**을 클릭하여 변경 사항을 저장하십시오.
+1. **저장**을 클릭하여 변경 사항을 저장하십시오.
 
     ![웹사이트 호스팅 활성화 스크린샷](../images/enable-website-hosting.png)
 
@@ -132,7 +132,9 @@ AWS 설명서에서 [리전 표](https://aws.amazon.com/about-aws/global-infrast
 
 이 구현 단계를 완료 한 후에는 S3 버킷의 웹 사이트 endpoint URL 을 방문하여 정적 웹 사이트에 액세스 할 수 있어야합니다.
 
-원하는 브라우저에서 웹 사이트의 기본 URL (섹션 4에서 언급 한 URL)을 방문하십시오. Wild Rydes 홈 페이지가 표시되어야합니다. 기본 URL을 조회해야하는 경우 S3 콘솔로 이동하여 버킷을 선택한 다음 **Properties** 탭에서 **Static Web Hosting** 을 클릭하십시오.
+원하는 브라우저에서 웹 사이트의 기본 URL (섹션 4에서 언급 한 URL)을 방문하십시오. Wild Rydes 홈 페이지가 표시되어야합니다. 기본 URL을 조회해야하는 경우 S3 콘솔로 이동하여 버킷을 선택한 다음 **속성** 탭에서 **정적 웹 사이트 호스팅** 을 클릭하십시오. 
+
+**엔드포인트**의 링크를 누르면 페이지가 보여지게 됩니다.
 
 페이지가 올바르게 보여진다면 (아래 예제 스크린샷 참고), 다음 모듈 [사용자 관리](../2_UserManagement)로 넘어가시면 됩니다.
 
