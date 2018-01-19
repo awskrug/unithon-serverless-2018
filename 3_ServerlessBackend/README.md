@@ -23,19 +23,19 @@ Amazon DynamoDB 콘솔을 사용해서 새로운 DynamoDB 테이블을 만드십
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
 
-1. AWS Management 콘솔에서, **Services** 를 선택한 다음 데이터베이스에서 **DynamoDB** 를 선택하십시오.
+1. AWS Management 콘솔에서, **서비스** 를 선택한 다음 데이터베이스에서 **DynamoDB** 를 선택하십시오.
 
-1. **Create table** 을 선택하십시오.
+1. **테이블 만들기** 을 선택하십시오.
 
-1. **Table name** 에 `Rides` 를 입력하십시오.
+1. **테이블 이름** 에 `Rides` 를 입력하십시오.
 
-1. **Partition key** 에 대해 `RideId` 키 유형(key type) 으로 **String** 을 선택하십시오.
+1. **파티션 키** 에 대해 `RideId` 키 유형(key type) 으로 **문자열** 을 선택하십시오.
 
-1. **Use default settings** 체크박스를 선택하고 **Create** 을 선택하십시오.
+1. **기본 설정 사용** 체크박스를 선택하고 **생성** 을 선택하십시오.
 
     ![테이블 만들기 스크린샷](../images/ddb-create-table.png)
 
-1. 새 테이블의 개요 섹션 아래로 스크롤해서 **ARN** 을 확인하십시오. 다음 섹션에서 이것을 사용할 것입니다. 미리 메모장에 복사해놓는게 좋습니다.
+1. 새 테이블의 개요 섹션 아래로 스크롤해서 **Amazon 리소스 이름(ARN)** 을 확인하십시오. 다음 섹션에서 이것을 사용할 것입니다. 미리 메모장에 복사해놓는게 좋습니다.
 
 </p></details>
 
@@ -48,41 +48,45 @@ IAM 콘솔을 사용하여 새 역할을 만듭니다. 이름을 `WildRydesLambd
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
 
-1. AWS Management Console 에서 **Services** 를 선택한 다음, Security, Identity & Compliance 섹션에서 **IAM** 을 선택하십시오.
+1. AWS Management Console 에서 **서비스** 를 선택한 다음 보안, 자격 증명 및 규정 준수 섹션에서 **IAM** 을 선택하십시오.
 
-1. 왼쪽 네비게이션바에서 **Roles** 을 선택하고 **Create new role** 를 선택하십시오.
+1. 왼쪽 네비게이션바에서 **역할** 을 선택하고 **역할 만들기** 를 선택하십시오.
 
-1. 역할 유형(role type)으로 **AWS Lambda** 를 선택하십시오.
+1. 역할 유형(role type)으로 **Lambda** 를 선택하십시오.
 
     **참고:** 역할 유형(role type)을 선택하면 AWS가 사용자를 대신해서 이 역할을 맡을 수 있도록 역할에 대한 신뢰 정책(trust policy)이 자동으로 생성됩니다. CLI, AWS CloudFormation 또는 다른 메커니즘을 사용해서 이 역할을 작성하는 경우 직접 신뢰 정책(trust policy)을 지정합니다.
 
-1. **Filter** 압력란에 `AWSLambdaBasicExecutionRole` 를 입력하고 해당 역할 옆의 확인란을 선택하십시오.
+1. 오른쪽 아래에 **다음:권한** 버튼을 누르십시오.
 
-1. **Next Step** 을 선택하십시오.
+1. **필터** 입력란에 `AWSLambdaBasicExecutionRole` 를 입력하고 체크하십시오
 
-1. **Role name** 에 `WildRydesLambda` 를 입력하십시오.
+1. 오른쪽 아래에 **다음:검토** 버튼을 누르십시오.
 
-1. **Create role** 을 선택하십시오.
+1. **역할 이름** 에 `WildRydesLambda` 를 입력하십시오.
+
+1. 오른쪽 아래에 **역할 만들기** 을 선택하십시오.
 
 1. 역할 페이지의 필터 입력칸에 `WildRydesLambda` 를 입력하고 방금 작성한 역할을 선택하십시오.
 
-1. Permissions 탭에서 **Inline Policies** 섹션을 확장하고 **click here** 링크를 선택해서 새 인라인 정책을 만드십시오.
+1. **권한** 탭에서 **인라인 정책 추가** 링크를 선택해서 새 인라인 정책을 만드십시오.
 
    ![인라인 정책 스크린샷](../images/inline-policies.png)
 
-1. **Policy Generator** 가 선택되어 있는지 확인하고 **Select** 을 선택하십시오.
+1. **서비스** 드롭다운 메뉴에서 **DynamoDB** 를 선택하십시오.
 
-1. **AWS Service** 드롭다운 메뉴에서 **Amazon DynamoDB** 를 선택하십시오.
+1. 작업 목록에서 **쓰기** -> **PutItem** 를 선택하십시오.
 
-1. Actions 목록에서 **PutItem** 를 선택하십시오.
+1. **리소스**  에서 **특정**을 선택하고, **ARN 추가** 링크를 선택하십시오.
 
 1. 이전 섹션에서 작성한 테이블의 ARN을 **Amazon Resource Name (ARN)** 입력칸에 붙여 넣으십시오.
 
     ![정책 생성기 스크린샷](../images/policy-generator.png)
 
-1. **Add Statement** 를 선택하십시오.
+1. 오른쪽 아래에 **Review policy** 버튼을 선택하십시오.
 
-1. **Next Step** 울 선택한 다음 **Apply Policy** 를 선택하십시오.
+1. **이름**에 `LambdaInlineDynamo`를 입력하십시오.
+
+1. 오른쪽 아래에 **Create policy** 버튼을 선택하십시오.
 
 </p></details>
 
@@ -94,31 +98,29 @@ AWS Lambda 콘솔을 사용하여 API 요청을 처리할 `RequestUnicorn` 라�
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
 
-1. **Services** 를 선택한 다음 Compute 섹션에서 **Lambda** 를 선택하십시오.
+1. **서비스** 를 선택한 다음 Compute 섹션에서 **Lambda** 를 선택하십시오.
 
-1. **Create a Lambda function** 를 선택하십시오.
+1. **함수 만들기** 를 선택하십시오.
 
-1. **Author from scratch** 버튼을 선택하십시오.
-
-1. 트리거를 지금 설정하지 마십시오. **Next** 를 선택하여 함수를 정의하는 부분을 진행합니다.
+1. **새로 작성** 버튼을 선택하십시오.
 
 1. **Name** 입력칸에 `RequestRide` 를 입력하십시오.
 
 1. description 입력칸은 옵션입니다.
 
-1. **Runtime** 에 대해 **Node.js 6.10** 을 선택하십시오.
+1. **런타임** 에 대해 **Node.js 6.10** 을 선택하십시오.
+
+1. **역할**에서 **기존 역할 선택**을 선택하십시오
+
+1. **기존 역할**에서 이전에 만든 역할을 선택하십시오.
+
+1. 오른쪽 아래에 **함수 생성**을 선택하십시오.
 
 1. [requestUnicorn.js](requestUnicorn.js) 의 코드를 복사하여 코드 입력 영역에 붙여 넣으십시오.
 
     ![람다 함수 만들기 스크린샷](../images/create-lambda-function.png)
 
-1. **Handler** 입력칸에 대해 `index.handler` 의 기본값을 그대로 둡니다.
-
-1. **Existing Role** 드롭다운에서 `WildRydesLambda` 를 선택합니다.
-
-1. **Next** 을 선택한 다음 리뷰 페이지에서 **Create function** 를 선택하십시오.
-
-    ![핸들러와 역할 정의 스크린샷](../images/lambda-handler-and-role.png)
+1. 오른쪽 상단의 **저장**을 선택하십시오
 
 </p></details>
 
@@ -126,9 +128,11 @@ AWS Lambda 콘솔을 사용하여 API 요청을 처리할 `RequestUnicorn` 라�
 
 이 모듈에서는 AWS Lambda 콘솔을 사용하여 작성한 함수를 테스트합니다. 다음 모듈에서는 API Gateway 가 있는 REST API를 추가하므로 첫번째 모듈에서 배포한 브라우저 기반 응용 프로그램에서 함수를 호출할 수 있습니다.
 
-1. 작성한 함수의 기본 편집 화면에서, 먼저 **Actions** 를 선택한 다음 **Configure test event** 를 선택하십시오.
+1. 작성한 함수의 기본 편집 화면에서, 먼저 오른쪽 상단의 **테스트**를 선택하십시오.
 
     ![테스트 이벤트 설정](../images/configure-test-event.png)
+
+1. **이벤트 이름**에 `RequestRideTest`를 입력하십시오.
 
 1. 다음 테스트 이벤트를 복사해서 편집기에 붙여넣습니다:
 
@@ -154,7 +158,9 @@ AWS Lambda 콘솔을 사용하여 API 요청을 처리할 `RequestUnicorn` 라�
     }
     ```
 
-1. **Save and test** 를 선택하십시오.
+1. 오른쪽 하단의 **생성** 을 선택하십시오.
+
+1. 방금 생성했던 `RequestRideTest`를 선택하고, 테스트 버튼을 누르십시오.
 
     ![테스트 이벤트 입력한 스크린샷](../images/input-test-event.png)
 

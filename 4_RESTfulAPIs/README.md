@@ -22,13 +22,13 @@ Amazon API Gateway 콘솔을 사용해서 새로운 API를 작성하십시오.
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
 
-1. AWS Management 콘솔에서, **Services** 를 클릭한 다음 Application Services 섹션에서 **API Gateway** 를 선택하십시오.
+1. AWS Management 콘솔에서, **서비스** 를 클릭한 다음 Application Services 섹션에서 **API Gateway** 를 선택하십시오.
 
-1. **Create API** 를 선택하십시오.
+1. **API 작성** 을 선택하십시오.
 
-1. **New API** 를 선택하고 **API Name** 에 `WildRydes` 를 입력하십시오.
+1. **새 API** 을 선택하고 **API 이름** 에 `WildRydes` 를 입력하십시오.
 
-1. **Create API** 를 선택하십시오
+1. **API 생성** 을 선택하십시오
 
     ![API 만들기 스크린샷](../images/create-api.png)
 
@@ -41,17 +41,17 @@ Amazon API Gateway 콘솔에서 API에 대한 새로운 Cognito 사용자 풀 �
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
 
-1. 새로 작성된 API에서, **Authorizers** 를 선택하십시오 .
+1. 새로 작성된 API에서, **권한 부여자** 를 선택하십시오 .
 
-1. 새로운 권한 부여자 생성 버튼을 선택하십시오.
+1. **새로운 권한 부여자 생성** 버튼을 선택하십시오.
 
 2. 이름에 `WildRydes`를 입력하십시오
 
 3. 유형은 `Cognito`를 선택하십시오
 
-4.  Cognito 사용자 풀은 드랍 다운 목록에서 `WildRydes`를 선택하십시오
+4.  **Cognito 사용자 풀**은 드랍 다운 목록에서 `WildRydes`를 선택하십시오
 
-5. 토큰 원본에 `Authorization`를 입력하십시오
+5. **토큰 원본**에 `Authorization`를 입력하십시오
 
 6. **Create**를 선택하십시오
 
@@ -61,9 +61,9 @@ Amazon API Gateway 콘솔에서 API에 대한 새로운 Cognito 사용자 풀 �
 
 1. 로그인 페이지로 리다이렉션 된 경우, 마지막 모듈에서 생성한 사용자로 로그인 하십시오. `/ride.html` 페이지로 이동할 것입니다.
 
-1. `/ride.html` 알림의 인증 토큰을 복사한뒤, API Gateway 콘솔 탭 하단의 `test` 버튼을 선택하고, 팝업창이 뜨면 **Identity token** 입력칸에 붙여넣습니다.
+1. `/ride.html` 알림의 인증 토큰을 복사한뒤, API Gateway 콘솔 탭의 **권한 부여자** 탭에서  **테스트** 버튼을 선택하고, 팝업창이 뜨면 **Identity token** 입력칸에 붙여넣습니다.
 
-1.  **Test** 를 선택하고 귀하의 사용자에 대한 클레임이 표시된것을 확인하십시오.
+1.  **테스트** 를 선택하고 귀하의 사용자에 대한 클레임이 표시된것을 확인하십시오.
 
 </p></details>
 
@@ -75,39 +75,39 @@ API 내에 /ride 라는 새 리소스를 만듭니다. 그런 다음 해당 리�
 
 1. 왼쪽 네비게이션 메뉴에서 WildRydes API 아래의 **Resources** 를 클릭하십시오.
 
-1. **Actions** 드롭 다운 메뉴에서 **Create Resource** 를 선택하십시오.
+1. **작업** 드롭 다운 메뉴에서 **리소스 생성** 를 선택하십시오.
 
-1. **Resource Name** 으로 `ride` 를 입력하십시오.
+1. **리소스 이름** 으로 `ride` 를 입력하십시오.
 
-1. **Resource Path** 가 `ride` 로 설정되어있는지 확인하십시오.
+1. **리소스 경로** 가 `ride` 로 설정되어있는지 확인하십시오.
 
 1. **API Gateway CORS 활성화** 체크박스를 체크하십시오.
 
-1. **Create Resource** 를 클릭하십시오.
+1. **리소스 생성** 을 클릭하십시오.
 
-1. 새로 생성된 `/ride` 리소스가 선택되면, **Action** 드롭 다운 메뉴에서 **Create Method** 를 선택하십시오.
+1. 새로 생성된 `/ride` 리소스가 선택되면, **Action** 드롭 다운 메뉴에서 **메서드 생성** 를 선택하십시오.
 
 1. 새로 나타나는 드롭 다운 메뉴에서 `POST` 를 선택한 다음 체크 표시를 클릭하십시오.
 
     ![메소드 생성 스크린샷](../images/create-method.png)
 
-1. 통합 유형(integration type)으로 **Lambda Function** 를 선택하십시오.
+1. 통합 유형(integration type)으로 **Lambda 함수** 를 선택하십시오.
 
-1. **Use Lambda Proxy integration** 확인란을 선택하십시오.
+1. **Lambda 프록시 통합 사용** 체크박스를 선택하십시오.
 
-1. **Lambda Region** 에 사용하고 있는 리전을 선택하십시오.
+1. **Lambda Region** 에 **ap-northeast2** 를 선택하십시오
 
 1. 이전 모듈에서 작성한 함수의 이름인 `RequestRide` 를 **Lambda Function** 에 입력하십시오.
 
-1. **Save** 을 선택하십시오.
-
     ![API 메소드 통합 스크린샷](../images/api-integration-setup.png)
+    
+1. 오른쪽 하단의 **저장** 을 선택하십시오.
 
-1. Amazon API Gateway 에 기능 호출 권한을 제공하라는 메시지(invoke your function)가 표시되면 **OK** 을 선택하십시오.
+1. **Lambda 함수에 대한 권한 추가** 관련 팝업이 나오면 확인을 선택하십시오.
 
-1. **Method Request** 카드를 선택하십시오.
+1. **메서드 요청** 카드를 선택하십시오.
 
-1. **Authorization** 옆에 있는 연필 아이콘을 선택하십시오.
+1. **승인** 옆에 있는 연필 아이콘을 선택하십시오.
 
 1. 드롭 다운 목록에서 WildRydes Cognito 사용자 풀 인증 프로그램(user pool authorizer) 을 선택하고 확인 표시 아이콘을 클릭합니다.
 
@@ -125,31 +125,31 @@ API 내에 /ride 라는 새 리소스를 만듭니다. 그런 다음 해당 리�
 
 1. Amazon API Gateway 콘솔의 가운데 패널에서 `/ride` 리소스를 선택하십시오.
 
-1. **Actions** 드롭 다운 목록에서 **Enable CORS** 를 선택하십시오.
+1. **작업** 드롭 다운 목록에서 **CORS 활성화** 를 선택하십시오.
 
-1. 기본 설정을 사용하고 **Enable CORS and replace existing CORS headers** 를 선택하십시오.
+1. 기본 설정을 사용하고 **CORS 활성화 및 기존의 CORS 헤더 대체** 를 선택하십시오.
 
-1. **Yes, replace existing values** 를 선택하십시오.
+1. **예, 기존 값을 대체하겠습니다.** 를 선택하십시오.
 
 1. 모든 단계 옆에 체크 표시가 나타날때까지 기다립니다.
 
 </p></details>
 
 ### 5. API 배포하기
-Amazon API Gateway 콘솔에서 Actions 를 선택하고, Deploy API 를 선택하십시오. 새 스테이지를 만들라는 메시지가 표시됩니다. 스테이지 이름으로는 prod 를 사용할 수 있습니다.
+Amazon API Gateway 콘솔에서 작업 를 선택하고, API 배포 를 선택하십시오. 새 스테이지를 만들라는 메시지가 표시됩니다. 스테이지 이름으로는 prod 를 사용할 수 있습니다.
 
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
 
-1. **Actions** 드롭 다운 목록에서 **Deploy API** 를 선택하십시오.
+1. **작업** 드롭 다운 목록에서 **API 배포** 를 선택하십시오.
 
-1. **Deployment stage** 드롭 다운 목록에서 **[New Stage]**를 선택하십시오
+1. **배포 스테이지** 드롭 다운 목록에서 **[새 스테이지]**를 선택하십시오
 
-1. **Stage Name** 에 `prod` 를 입력하십시오.
+1. **스테이지 이름** 에 `prod` 를 입력하십시오.
 
-1. **Deploy** 를 선택하십시오.
+1. **배포** 를 선택하십시오.
 
-1. **Invoke URL** 를 미리 메모장에 복사해놓으십시오. 다음 섹션에서 사용합니다.
+1. **URL 호출** 을 미리 메모장에 복사해놓으십시오. 다음 섹션에서 사용합니다.
 
 </p></details>
 
@@ -158,8 +158,6 @@ Amazon API Gateway 콘솔에서 Actions 를 선택하고, Deploy API 를 선택�
 
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
-
-모듈 2 를 수동으로 완료했다면, 로컬에 저장한 `config.js` 파일을 편집 할 수 있습니다. 만약 AWS CloudFormation 템플릿을 사용한 경우 먼저 S3 버킷에서 `config.js` 파일을 다운로드 해야합니다. 그렇게 하려면 웹 사이트의 기본 URL 아래에 있는 `/js/config.js` 를 방문해서 **File** 을 선택한 다음, 브라우저에서 **Save Page As** 을 선택하십시오.
 
 1. 텍스트 편집기에서 config.js 파일을 엽니다.
 
@@ -170,29 +168,25 @@ Amazon API Gateway 콘솔에서 Actions 를 선택하고, Deploy API 를 선택�
     ```JavaScript
     window._config = {
         cognito: {
-            userPoolId: 'us-west-2_uXboG5pAb', // e.g. us-east-2_uXboG5pAb
-            userPoolClientId: '25ddkmj4v6hfsfvruhpfi7n4hv', // e.g. 25ddkmj4v6hfsfvruhpfi7n4hv
-            region: 'us-west-2' // e.g. us-east-2
+            userPoolId: 'ap-northeast-2_IfOIfOh4n', // e.g. ap-northeast-2_uXboG5pAb
+            userPoolClientId: '5a94rj11ldotcknbaat38lavt7', // e.g. 25ddkmj4v6hfsfvruhpfi7n4hv
+            region: 'ap-northeast-2' // e.g. ap-northeast-2
         },
         api: {
-            invokeUrl: 'https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod,
+            invokeUrl: 'https://2c5292i83i.execute-api.ap-northeast-2.amazonaws.com/prod' // e.g. https://rc7nyt4tql.execute-api.ap-northeast-2.amazonaws.com/prod',
         }
     };
     ```
 
 1. 변경 사항을 로컬에 저장하십시오.
 
-1. AWS Management 콘솔에서 **Services** 를 선택한 다음, Storage 에서 **S3** 를 선택하십시오.
+1. AWS Management 콘솔에서 **서비스** 를 선택한 다음, Storage 에서 **S3** 를 선택하십시오.
 
 1. 귀하의 웹 사이트 버킷을 선택하고 `js` 폴더로 이동하십시오.
 
-1. **Upload** 를 선택하십시오.
+1. **업로드** 를 선택하십시오.
 
-1. **Add files** 를 선택하고, `config.js` 의 로컬 복사본을 선택한 다음 **Next** 을 클릭하십시오.
-
-1. `Set permissions` 및 `Set properties` 섹션을 통해 기본값을 변경하지 않고 **Next** 를 선택하십시오.
-
-1. `Review` 섹션에서 **Upload** 를 선택하십시오.
+1. **파일 추가** 를 선택하고, `config.js` 의 로컬 복사본을 선택한 다음 **업로드** 을 클릭하십시오.
 
 </p></details>
 
