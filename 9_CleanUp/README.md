@@ -104,7 +104,7 @@
 <details>
 <summary><strong>단계별 지침 (자세한 내용을 보려면 펼쳐주세요)</strong></summary><p>
 
-1. AWS Management 콘솔 에서 **서비스** 를 클릭한 다음 Management Tools 에서 **스** 를 선택하십시오.
+1. AWS Management 콘솔 에서 **서비스** 를 클릭한 다음 **관리 도구** 에서 **CloudWatch** 를 선택하십시오.
 
 1. 네비게이션 메뉴에서 **Logs** 를 선택하십시오.
 
