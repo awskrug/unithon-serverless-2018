@@ -1,4 +1,11 @@
-* 본 실습서는 https://github.com/awskrug/aws-serverless-workshops/tree/master/WebApplication 실습서의 번역 버전입니다.
+# 개요
+* 본 실습서는 1차번역본인 https://github.com/awskrug/aws-serverless-workshops/tree/master/WebApplication 을 개선한 2차 번역본입니다.(한글화된 콘솔 화면 스크린샷으로 변경, 사용 용어 번역) 
+* 원문(영문)을 참조하시려면 https://github.com/awslabs/aws-serverless-workshops 을 참고해 주세요.
+
+1차 번역에 참여해 주신 AWSKRUG 멤버분들에게 감사를 표합니다 :)
+
+
+
 
 # Wildrydes 서버리스 웹 애플리케이션 워크샵
 본 워크샵에서는 사용자가 [Wild Rydes](http://www.wildrydes.com/) 서비스를 통해 현재 있는 위치에서 유니콘 호출 및 탑승을 할 수 있는 스타트업 아이디어를 구현한다는 시나리오로 함께 웹 애플리케이션을 만들어 배포해 봅니다. 이 서비스는 사용자에게 HTML 기반 사용자 인터페이스를 제공하여, 사용자가 원하는 위치를 표시하고 유니콘 요청을 하면, 가까운 유니콘을 보내기기 위해 RESTful 웹 서비스로 백엔드를 제공합니다. 또한, 사용자가 유니콘 타기를 요청하기 전에 기본적으로 회원 가입을 하고 로그인 할 수있는 기능을 제공합니다.
