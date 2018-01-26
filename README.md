@@ -1,5 +1,5 @@
 # 개요
-* 본 실습서는 1차번역본인 https://github.com/awskrug/aws-serverless-workshops/tree/master/WebApplication 을 개선한 2차 번역본입니다.(한글화된 콘솔 화면 스크린샷으로 변경, 사용 용어 번역) 
+* 본 실습서는 1차번역본인 https://github.com/awskrug/aws-serverless-workshops/tree/master/WebApplication 을 개선한 2차 번역본입니다.(한글화된 콘솔 화면으로 스크린샷 변경, 사용 용어를 한글 콘솔에 맞도록 수정) 
 * 원문(영문)을 참조하시려면 https://github.com/awslabs/aws-serverless-workshops 을 참고해 주세요.
 
 1차 번역에 참여해 주신 AWSKRUG 멤버분들에게 감사를 표합니다 :)
